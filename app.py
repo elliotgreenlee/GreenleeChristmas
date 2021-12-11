@@ -19,6 +19,10 @@ app.logger.setLevel(gunicorn_logger.level)
 load_dotenv()
 environment_debug = bool(os.environ.get('DEBUG'))
 environment_database_url = str(os.environ.get('DATABASE_URL'))
+# Fix https://stackoverflow.com/questions/62688256/sqlalchemy-exc-nosuchmoduleerror-cant-load-plugin-sqlalchemy
+# -dialectspostgre Recommended solution from Heroku.
+if environment_database_url and environment_database_url.startswith("postgres://"):
+    environment_database_url = environment_database_url.replace("postgres://", "postgresql://", 1)
 app.logger.info(environment_debug)
 app.logger.info(environment_database_url)
 
