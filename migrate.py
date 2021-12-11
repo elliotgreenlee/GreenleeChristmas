@@ -3,7 +3,8 @@ import csv
 from app import app, db
 from models import Gift
 
-if __name__ == "__main__":
+
+def create_database():
     with app.app_context():
         db.create_all()
         with open('gifts.csv') as csvfile:
@@ -21,3 +22,7 @@ if __name__ == "__main__":
                     db.session.commit()
                 except:
                     print('Failed to store gift in database')
+
+
+if __name__ == "__main__":
+    create_database()

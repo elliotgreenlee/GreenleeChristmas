@@ -1,15 +1,13 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Greenlee Christmas Catalogue 2020</title>
+
 {% endblock %}
 
 {% block body %}
-<body style="background-image: url('images/snowflake-background.png')">
-
 <div class="container">
   <div class="row">
-    <div class="twelve columns" style="margin-top: 25%">
+    <div class="twelve columns" style="margin-top: 10%">
       <h1>Merry Christmas!</h1>
       <p>This year, your gift must be fun! Check out the catalogue below, and decide which gift is best for you. At the bottom of the page you can choose your gift, let me know your address, and leave me a message.</p>
     </div>
@@ -20,11 +18,11 @@
   {% for gift in gifts %}
   <div class="row">
     <div class="six columns">
-      <h3>{{ gift.name }}</h3>
+      <a href="{{ gift.product_url }}"><h3>{{ gift.name }}</h3></a>
       <p>{{ gift.description }}</p>
     </div>
     <div class="six columns">
-      <img src="{{ url_for('static', filename='images/' + gift.image_url) }}" style="max-width: 80%">
+      <a href="{{ gift.product_url }}"><img src="{{ url_for('static', filename='images/' + gift.image_url) }}" style="max-width: 80%"></a>
     </div>
   </div>
   {% endfor %}
@@ -64,8 +62,11 @@
         <textarea class="u-full-width" placeholder="Hi Elliot" id="messageInput" name="message"></textarea>
       </div>
     </div>
-    <div class="twelve columns">
-      <input class="button-primary" type="submit" value="Submit">
+
+    <div class="row">
+      <div class="twelve columns">
+        <input class="button-primary" type="submit" value="Submit">
+      </div>
     </div>
   </form>
 </div>

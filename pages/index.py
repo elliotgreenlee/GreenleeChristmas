@@ -1,6 +1,5 @@
 import logging
-from flask import request, redirect, url_for, session, render_template
-from app import db
+from flask import render_template, request, redirect
 from models import Gift
 
 log = logging.getLogger('gunicorn.error')

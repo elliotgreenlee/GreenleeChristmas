@@ -4,6 +4,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="UTF-8">
+  <title>Greenlee Christmas Catalogue 2020</title>
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- Mobile Specific Metas
@@ -22,7 +23,7 @@
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
   {% block head %}{% endblock %}
 </head>
-<body>
-{% block body %}{% endblock %}
+<body style="background-image: url('{{ url_for('static', filename='images/snowflake-background.png') }}')">
+  {% block body %}{% endblock %}
 </body>
 </html>
