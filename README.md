@@ -1,2 +1,2 @@
 # GreenleeChristmas
-Christmas Gift Catalogue Website
+This is the Christmas Gift Catalogue Website for my family and friends.
