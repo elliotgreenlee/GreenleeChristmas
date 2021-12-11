@@ -38,7 +38,7 @@ db.init_app(app)
 
 # Urls
 app.add_url_rule('/', 'index', view_func=index.index, methods=['GET'])
-app.add_url_rule('/', 'christmas2020', view_func=christmas2020.christmas2020, methods=['GET'])
+app.add_url_rule('/christmas2020', 'christmas2020', view_func=christmas2020.christmas2020, methods=['GET'])
 
 if __name__ == "__main__":
     app.run(debug=debug)
