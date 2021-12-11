@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Greenlee Christmas Catalogue 2020</title>
+{% endblock %}
+
+{% block body %}
+<body style="background-image: url('images/snowflake-background.png')">
+
+<div class="container">
+  <div class="row">
+    <div class="twelve columns" style="margin-top: 25%">
+      <h1>Merry Christmas!</h1>
+      <p>This year, your gift must be fun! Check out the catalogue below, and decide which gift is best for you. At the bottom of the page you can choose your gift, let me know your address, and leave me a message.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  {% for gift in gifts %}
+  <div class="row">
+    <div class="six columns">
+      <h3>{{ gift.name }}</h3>
+      <p>{{ gift.description }}</p>
+    </div>
+    <div class="six columns">
+      <img src="{{ url_for('static', filename='images/' + gift.image_url) }}" style="max-width: 80%">
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="container">
+  <form action="https://formspree.io/f/xjvpadng" method="POST">
+    <div class="row">
+      <div class="six columns">
+        <label for="nameInput">Your name</label>
+        <input class="u-full-width" type="text" placeholder="Jane Smith" id="nameInput" name="name">
+      </div>
+      <div class="six columns">
+        <label for="addressInput">Your shipping address</label>
+        <input class="u-full-width" type="text" placeholder="1234 Some Road Apt. 123 Somecity, AA 12345" id="addressInput" name="address">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="six columns">
+        <label for="emailInput">Your email</label>
+        <input class="u-full-width" type="email" placeholder="example@mailbox.com" id="emailInput" name="email">
+      </div>
+      <div class="six columns">
+        <label for="giftInput">Gift Desired</label>
+        <select class="u-full-width" id="giftInput" name="gift">
+          {% for gift in gifts %}
+          <option value="{{ gift.name }}: {{ gift.product_url }}">{{ gift.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="twelve columns">
+        <label for="messageInput">Message</label>
+        <textarea class="u-full-width" placeholder="Hi Elliot" id="messageInput" name="message"></textarea>
+      </div>
+    </div>
+    <div class="twelve columns">
+      <input class="button-primary" type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+{% endblock %}
