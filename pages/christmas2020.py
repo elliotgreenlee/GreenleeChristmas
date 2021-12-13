@@ -6,5 +6,5 @@ log = logging.getLogger('gunicorn.error')
 
 
 def christmas2020():
-    all_gifts = Gift.query.all()
-    return render_template('christmas2020.html', gifts=all_gifts)
+    gifts2020 = Gift.query.filter_by(year='2020').all()
+    return render_template('christmas2020.html', gifts=gifts2020)

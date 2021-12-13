@@ -9,4 +9,5 @@ class Gift(db.Model):
     description = db.Column(db.String(1000), nullable=False)
     image_url = db.Column(db.String(200), nullable=False)
     product_url = db.Column(db.String(200), nullable=False)
+    year = db.Column(db.Integer, nullable=False)
     
