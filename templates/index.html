@@ -9,7 +9,7 @@
   <div class="row">
     <div class="twelve columns" style="margin-top: 10%">
       <h1>Merry Christmas!</h1>
-      <p>This year, your gift must be fun! Check out the catalogue below, and decide which gift is best for you. At the bottom of the page you can choose your gift, let me know your address, and leave me a message.</p>
+      <p>From our kitchen to yours, these are some of our favorite items in the Greenlee kitchen. Check out the catalogue below, and decide which gift is best for you. At the bottom of the page you can choose your gift, let me know your address, and leave me a message. To visit past years, add /christmas2020 to your url.</p>
     </div>
   </div>
 </div>
@@ -22,7 +22,7 @@
       <p>{{ gift.description }}</p>
     </div>
     <div class="six columns">
-      <a href="{{ gift.product_url }}"><img src="{{ url_for('static', filename='images/' + gift.image_url) }}" style="max-width: 80%"></a>
+      <a href="{{ gift.product_url }}"><img src="{{ url_for('static', filename='images/2021/' + gift.image_url) }}" style="max-width: 80%"></a>
     </div>
   </div>
   {% endfor %}
