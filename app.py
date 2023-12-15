@@ -5,7 +5,7 @@ from flask import Flask
 from dotenv import load_dotenv
 
 from models import db
-from pages import index, christmas2020
+from pages import index, christmas2020, christmas2021
 
 
 app = Flask(__name__)
@@ -38,6 +38,7 @@ db.init_app(app)
 
 # Urls
 app.add_url_rule('/', 'index', view_func=index.index, methods=['GET'])
+app.add_url_rule('/christmas2021', 'christmas2021', view_func=christmas2021.christmas2021, methods=['GET'])
 app.add_url_rule('/christmas2020', 'christmas2020', view_func=christmas2020.christmas2020, methods=['GET'])
 
 if __name__ == "__main__":
