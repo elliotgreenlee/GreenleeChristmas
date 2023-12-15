@@ -1,6 +1,6 @@
 import csv
 
-from app import app, db
+from api.app import app, db
 from models import Gift
 
 
