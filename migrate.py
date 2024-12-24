@@ -10,7 +10,9 @@ def create_database():
         with open('gifts.csv') as csvfile:
             csv_reader = csv.reader(csvfile, delimiter='|')
             fields = next(csv_reader)
+            print("Adding rows with fields:")
             print(fields)
+            num_rows_added = 0
             for row in csv_reader:
                 new_gift = Gift(name=row[0],
                                 description=row[1],
@@ -21,8 +23,10 @@ def create_database():
                 try:
                     db.session.add(new_gift)
                     db.session.commit()
+                    num_rows_added += 1
                 except:
                     print('Failed to store gift in database')
+            print('Added {:d} rows'.format(num_rows_added))
 
 
 def delete_database():
