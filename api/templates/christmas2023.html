@@ -9,15 +9,7 @@
   <div class="row">
     <div class="twelve columns" style="margin-top: 10%">
       <h1>Merry Christmas!</h1>
-      <p>
-        The holidays are a great time to see friends and family, but sometimes you can't visit in person.
-        Other times, you need a little you break from visiting in person.
-        Check out the games below for your next Zoom call or family Facetime,
-        or pick something out that will help you unwind.
-        I'd like to play games with you on Steam! After you make an account, go to <a href="https://steamcommunity.com/my/friends/add">https://steamcommunity.com/my/friends/add</a> to find your friends code.
-        At the bottom of the page you can let me know your email and friend code to get a Steam gift card, or choose to donate.
-        To visit past years, add /christmas[year] to your url.
-      </p>
+      <p>I love organizational apps for all parts of life. Check the catalogue below to see some of my recommendations. At the bottom of the page you can let me know your email or phone to get an Apple gift card, or choose to donate. To visit past years, add /christmas[year] to your url.</p>
     </div>
   </div>
 </div>
@@ -30,22 +22,22 @@
       <p>{{ gift.description }}</p>
     </div>
     <div class="six columns">
-      <a href="{{ gift.product_url }}"><img src="{{ url_for('static', filename='images/2024/' + gift.image_url) }}" style="max-width: 80%"></a>
+      <a href="{{ gift.product_url }}"><img src="{{ url_for('static', filename='images/2023/' + gift.image_url) }}" style="max-width: 80%"></a>
     </div>
   </div>
   {% endfor %}
 </div>
 
 <div class="container">
-  <form action="https://formspree.io/f/mldddrww" method="POST">
+  <form action="https://formspree.io/f/mnqeaqlj" method="POST">
     <div class="row">
       <div class="six columns">
         <label for="nameInput">Your name</label>
         <input class="u-full-width" type="text" placeholder="Jane Smith" id="nameInput" name="name">
       </div>
       <div class="six columns">
-        <label for="steamCodeInput">Your Steam friends code. <a href="https://steamcommunity.com/my/friends/add">https://steamcommunity.com/my/friends/add</a></label>
-        <input class="u-full-width" type="text" placeholder="117670774" id="steamCodeInput" name="steamCode">
+        <label for="phoneInput">Your text message capable phone number</label>
+        <input class="u-full-width" type="text" placeholder="000-876-4309" id="phoneInput" name="phone">
       </div>
     </div>
 
@@ -57,7 +49,7 @@
       <div class="six columns">
         <label for="giftInput">Gift Desired</label>
         <select class="u-full-width" id="giftInput" name="gift">
-          <option value="Steam Gift Card">Steam Gift Card</option>
+          <option value="Apple Gift Card">Apple Gift Card</option>
           <option value="Donate $25">Donate $25</option>
         </select>
       </div>
