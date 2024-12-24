@@ -14,4 +14,5 @@ To fully clear holdover duplicates on hosted postgres run:
 * `SELECT * FROM gift;` to confirm.
 
 Forms handled by Formspree.
-Hosting handled by Vercel.
+Hosting and Deployment handled by Vercel through Github.
+Don't forget to deploy database changes with migrate.py!
